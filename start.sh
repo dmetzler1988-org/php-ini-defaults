@@ -1,6 +1,21 @@
 #!/bin/sh
 
 #################
+# PHP 5.6
+#################
+
+# Check if folder exist, if yes, remove it
+[ -d 5.6 ] && rm -rf ./5.6
+# Create a new clean folder to save files in it from docker container.
+mkdir ./5.6
+# Create a new docker container from PHP image.
+docker create -it --name php56 php:5.6-alpine bash
+# Copy PHP files from docker container to local folder.
+docker cp php56:/usr/local/etc/php ./5.6
+# Remove docker container.
+docker rm -f php56
+
+#################
 # PHP 7.0
 #################
 
