@@ -103,7 +103,7 @@ docker rm -f php74
 # Create a new clean folder to save files in it from docker container.
 mkdir ./8.0
 # Create a new docker container from PHP image.
-docker create -it --name php80 php:8.0-rc-alpine bash
+docker create -it --name php80 php:8.0-alpine bash
 # Copy PHP files from docker container to local folder.
 docker cp php80:/usr/local/etc/php ./8.0
 # Remove docker container.
