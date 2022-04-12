@@ -108,3 +108,18 @@ docker create -it --name php80 php:8.0-alpine bash
 docker cp php80:/usr/local/etc/php ./8.0
 # Remove docker container.
 docker rm -f php80
+
+
+#################
+# PHP 8.1
+#################
+# Check if folder exist, if yes, remove it
+[ -d 8.1 ] && rm -rf ./8.1
+# Create a new clean folder to save files in it from docker container.
+mkdir ./8.1
+# Create a new docker container from PHP image.
+docker create -it --name php81 php:8.1-alpine bash
+# Copy PHP files from docker container to local folder.
+docker cp php81:/usr/local/etc/php ./8.1
+# Remove docker container.
+docker rm -f php81
