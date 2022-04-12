@@ -3,7 +3,6 @@
 #################
 # PHP 5.6
 #################
-
 # Check if folder exist, if yes, remove it
 [ -d 5.6 ] && rm -rf ./5.6
 # Create a new clean folder to save files in it from docker container.
@@ -18,7 +17,6 @@ docker rm -f php56
 #################
 # PHP 7.0
 #################
-
 # Check if folder exist, if yes, remove it
 [ -d 7.0 ] && rm -rf ./7.0
 # Create a new clean folder to save files in it from docker container.
@@ -30,11 +28,9 @@ docker cp php70:/usr/local/etc/php ./7.0
 # Remove docker container.
 docker rm -f php70
 
-
 #################
 # PHP 7.1
 #################
-
 # Check if folder exist, if yes, remove it
 [ -d 7.1 ] && rm -rf ./7.1
 # Create a new clean folder to save files in it from docker container.
@@ -46,11 +42,9 @@ docker cp php71:/usr/local/etc/php ./7.1
 # Remove docker container.
 docker rm -f php71
 
-
 #################
 # PHP 7.2
 #################
-
 # Check if folder exist, if yes, remove it
 [ -d 7.2 ] && rm -rf ./7.2
 # Create a new clean folder to save files in it from docker container.
@@ -62,11 +56,9 @@ docker cp php72:/usr/local/etc/php ./7.2
 # Remove docker container.
 docker rm -f php72
 
-
 #################
 # PHP 7.3
 #################
-
 # Check if folder exist, if yes, remove it
 [ -d 7.3 ] && rm -rf ./7.3
 # Create a new clean folder to save files in it from docker container.
@@ -78,11 +70,9 @@ docker cp php73:/usr/local/etc/php ./7.3
 # Remove docker container.
 docker rm -f php73
 
-
 #################
 # PHP 7.4
 #################
-
 # Check if folder exist, if yes, remove it
 [ -d 7.4 ] && rm -rf ./7.4
 # Create a new clean folder to save files in it from docker container.
@@ -93,7 +83,6 @@ docker create -it --name php74 php:7.4-alpine bash
 docker cp php74:/usr/local/etc/php ./7.4
 # Remove docker container.
 docker rm -f php74
-
 
 #################
 # PHP 8.0
@@ -108,7 +97,6 @@ docker create -it --name php80 php:8.0-alpine bash
 docker cp php80:/usr/local/etc/php ./8.0
 # Remove docker container.
 docker rm -f php80
-
 
 #################
 # PHP 8.1
