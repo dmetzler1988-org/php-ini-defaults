@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if ! docker info > /dev/null 2>&1; then
+    echo "This script uses docker, and it isn't running - please start docker and try again!"
+    exit 1
+fi
+
 #################
 # PHP 5.6
 #################
@@ -111,3 +116,17 @@ docker create -it --name php81 php:8.1-alpine bash
 docker cp php81:/usr/local/etc/php ./8.1
 # Remove docker container.
 docker rm -f php81
+
+#################
+# PHP 8.2
+#################
+# Check if folder exist, if yes, remove it
+[ -d 8.2 ] && rm -rf ./8.2
+# Create a new clean folder to save files in it from docker container.
+mkdir ./8.2
+# Create a new docker container from PHP image.
+docker create -it --name php82 php:8.2-alpine bash
+# Copy PHP files from docker container to local folder.
+docker cp php82:/usr/local/etc/php ./8.2
+# Remove docker container.
+docker rm -f php82
